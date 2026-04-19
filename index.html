@@ -145,27 +145,13 @@ img{max-width:100%;display:block}
 .solucao-bg{position:absolute;inset:0}
 .solucao-bg img{width:100%;height:100%;object-fit:cover;opacity:.1}
 .solucao .container{position:relative;z-index:2;display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center}
-/* Solucao visual - blueprint tecnico */
-.solucao-visual{position:relative;min-height:460px;padding:40px 30px;display:flex;align-items:center;justify-content:center;overflow:hidden;border-radius:14px;background:radial-gradient(ellipse at center,rgba(212,148,26,.04),transparent 70%)}
-.visual-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(212,148,26,.07) 1px,transparent 1px),linear-gradient(90deg,rgba(212,148,26,.07) 1px,transparent 1px);background-size:28px 28px;mask-image:radial-gradient(ellipse at center,#000 30%,transparent 75%);-webkit-mask-image:radial-gradient(ellipse at center,#000 30%,transparent 75%);pointer-events:none}
-.visual-circle{position:absolute;top:-40px;right:-40px;width:180px;height:180px;border:1px dashed rgba(212,148,26,.35);border-radius:50%;pointer-events:none}
-.visual-circle::after{content:'';position:absolute;inset:28px;border:1px solid rgba(212,148,26,.18);border-radius:50%}
-.visual-label{position:absolute;top:14px;right:14px;font-size:.58rem;font-weight:800;color:rgba(212,148,26,.75);letter-spacing:2.8px;text-transform:uppercase;z-index:4}
-.visual-container{position:relative;z-index:3;width:100%;max-width:440px;height:auto;filter:drop-shadow(0 30px 50px rgba(0,0,0,.55)) drop-shadow(0 0 24px rgba(212,148,26,.08));animation:v-float 7s ease-in-out infinite}
-@keyframes v-float{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
-.visual-dim{position:absolute;z-index:3;display:flex;align-items:center;color:var(--yellow);font-size:.62rem;font-weight:800;letter-spacing:1.8px;text-transform:uppercase}
-.visual-dim span{background:rgba(6,26,16,.7);padding:3px 8px;border-radius:3px;backdrop-filter:blur(4px);white-space:nowrap}
-.visual-dim-x{top:18%;left:8%;right:8%;justify-content:center}
-.visual-dim-x::before,.visual-dim-x::after{content:'';flex:1;height:1px;position:relative}
-.visual-dim-x::before{background:linear-gradient(90deg,transparent,rgba(212,148,26,.6));margin-right:8px}
-.visual-dim-x::after{background:linear-gradient(90deg,rgba(212,148,26,.6),transparent);margin-left:8px}
-.visual-dim-y{top:30%;bottom:20%;right:14px;flex-direction:column}
-.visual-dim-y::before,.visual-dim-y::after{content:'';flex:1;width:1px}
-.visual-dim-y::before{background:linear-gradient(180deg,transparent,rgba(212,148,26,.5));margin-bottom:8px}
-.visual-dim-y::after{background:linear-gradient(180deg,rgba(212,148,26,.5),transparent);margin-top:8px}
-.visual-dim-y span{writing-mode:vertical-rl;transform:rotate(180deg)}
-.visual-badges{position:absolute;bottom:18px;left:18px;display:flex;gap:8px;flex-wrap:wrap;z-index:4}
-.vb-tag{background:rgba(212,148,26,.14);border:1px solid rgba(212,148,26,.38);color:var(--yellow);padding:6px 12px;border-radius:50px;font-size:.62rem;font-weight:800;letter-spacing:1.5px;text-transform:uppercase;backdrop-filter:blur(6px)}
+/* Solucao visual - line art */
+.solucao-visual{position:relative;min-height:420px;display:flex;align-items:center;justify-content:center;padding:20px}
+.container-lineart{width:100%;max-width:560px;height:auto;filter:drop-shadow(0 14px 32px rgba(0,0,0,.35));opacity:0;transform:translateY(20px);transition:opacity 1.2s ease-out,transform 1.2s ease-out}
+.container-lineart.in{opacity:1;transform:translateY(0)}
+.container-lineart .stroke-main{stroke:rgba(255,255,255,.95);stroke-width:1.8;fill:none;stroke-linecap:square;stroke-linejoin:miter}
+.container-lineart .stroke-thin{stroke:rgba(255,255,255,.55);stroke-width:1;fill:none}
+.container-lineart .stroke-accent{stroke:rgba(255,255,255,.75);stroke-width:1.2;fill:none}
 .solucao-list{list-style:none;margin-top:20px;display:flex;flex-direction:column;gap:14px}
 .solucao-list li{display:flex;align-items:flex-start;gap:10px;font-size:.9rem;font-weight:600;color:rgba(255,255,255,.8)}
 .solucao-list li svg{width:18px;height:18px;stroke:var(--yellow);fill:none;stroke-width:2.5;flex-shrink:0;margin-top:2px}
@@ -461,14 +447,8 @@ img{max-width:100%;display:block}
 
 /* IMAGES */
 .problema-img img,.specs-img img{height:260px}
-.solucao-visual{min-height:340px;padding:20px 14px}
-.visual-container{max-width:280px}
-.visual-dim-x{top:14%}
-.visual-dim-x span{font-size:.55rem}
-.visual-dim-y{display:none}
-.visual-circle{width:120px;height:120px;top:-20px;right:-20px}
-.vb-tag{padding:4px 10px;font-size:.56rem}
-.visual-label{font-size:.52rem}
+.solucao-visual{min-height:280px;padding:10px}
+.container-lineart{max-width:340px}
 .app-card img{height:220px}
 .galeria-item img{height:220px}
 .dif-card img{height:160px}
@@ -669,17 +649,55 @@ Falar com especialista
 </div>
 <div class="anim d1">
 <div class="solucao-visual">
-<span class="visual-label">Ficha t&eacute;cnica</span>
-<div class="visual-grid"></div>
-<div class="visual-circle"></div>
-<div class="visual-dim visual-dim-x"><span>6,06 m</span></div>
-<div class="visual-dim visual-dim-y"><span>2,60 m</span></div>
-<img src="imgs/container-blueprint.png" alt="Cont&ecirc;iner modular 20 p&eacute;s sob medida" class="visual-container" loading="lazy">
-<div class="visual-badges">
-<span class="vb-tag">20 ft</span>
-<span class="vb-tag">A&ccedil;o Corten</span>
-<span class="vb-tag">Modular</span>
-</div>
+<svg class="container-lineart" viewBox="0 0 560 340" aria-hidden="true">
+<g class="stroke-main">
+<rect x="40" y="80" width="400" height="200"/>
+<path d="M40 80 L90 52 L490 52 L440 80 Z"/>
+<path d="M440 80 L490 52 L490 252 L440 280 Z"/>
+</g>
+<g class="stroke-accent">
+<rect x="32" y="72" width="16" height="16"/>
+<rect x="432" y="72" width="16" height="16"/>
+<rect x="32" y="272" width="16" height="16"/>
+<rect x="432" y="272" width="16" height="16"/>
+<rect x="482" y="44" width="16" height="16"/>
+<rect x="482" y="244" width="16" height="16"/>
+</g>
+<g class="stroke-thin">
+<line x1="65" y1="80" x2="65" y2="280"/>
+<line x1="90" y1="80" x2="90" y2="280"/>
+<line x1="115" y1="80" x2="115" y2="280"/>
+<line x1="140" y1="80" x2="140" y2="280"/>
+<line x1="165" y1="80" x2="165" y2="280"/>
+<line x1="190" y1="80" x2="190" y2="280"/>
+<line x1="215" y1="80" x2="215" y2="280"/>
+<line x1="240" y1="80" x2="240" y2="280"/>
+<line x1="265" y1="80" x2="265" y2="280"/>
+<line x1="290" y1="80" x2="290" y2="280"/>
+<line x1="315" y1="80" x2="315" y2="280"/>
+<line x1="340" y1="80" x2="340" y2="280"/>
+<line x1="365" y1="80" x2="365" y2="280"/>
+<line x1="390" y1="80" x2="390" y2="280"/>
+<line x1="415" y1="80" x2="415" y2="280"/>
+<line x1="54" y1="74" x2="454" y2="74"/>
+<line x1="68" y1="66" x2="468" y2="66"/>
+<line x1="82" y1="58" x2="482" y2="58"/>
+</g>
+<g class="stroke-accent">
+<line x1="40" y1="88" x2="440" y2="88"/>
+<line x1="40" y1="272" x2="440" y2="272"/>
+<line x1="465" y1="66" x2="465" y2="266"/>
+<line x1="450" y1="74.4" x2="450" y2="274.4"/>
+<line x1="480" y1="57.6" x2="480" y2="257.6"/>
+<rect x="460" y="168" width="10" height="20"/>
+<rect x="475" y="160" width="10" height="20"/>
+<rect x="150" y="260" width="70" height="12"/>
+<rect x="280" y="260" width="70" height="12"/>
+</g>
+<g class="stroke-thin">
+<ellipse cx="260" cy="305" rx="210" ry="8" stroke-dasharray="2 4"/>
+</g>
+</svg>
 </div>
 </div>
 </div>
@@ -1000,6 +1018,10 @@ document.querySelectorAll('.anim').forEach(el=>obs.observe(el));
 // Apps cards reveal
 const appObs=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting){x.target.classList.add('in');appObs.unobserve(x.target)}}),{threshold:.15});
 document.querySelectorAll('.app-card').forEach(el=>appObs.observe(el));
+
+// Line art reveal
+const lineObs=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting){x.target.classList.add('in');lineObs.unobserve(x.target)}}),{threshold:.25});
+document.querySelectorAll('.container-lineart').forEach(el=>lineObs.observe(el));
 
 // Form submit -> WhatsApp
 function enviarForm(e){
