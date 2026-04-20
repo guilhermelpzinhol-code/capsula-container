@@ -60,9 +60,9 @@ img{max-width:100%;display:block}
 .nav{position:fixed;top:0;left:0;width:100%;z-index:1000;padding:14px 0;transition:all .3s}
 .nav.scrolled{background:rgba(6,26,16,.97);backdrop-filter:blur(10px);padding:8px 0;box-shadow:0 2px 20px rgba(0,0,0,.2)}
 .nav-inner{display:flex;align-items:center;justify-content:space-between}
-.nav-logo{display:inline-flex;align-items:center;text-decoration:none}
-.nav-logo img{height:46px;width:auto;display:block;transition:height .3s}
-.nav.scrolled .nav-logo img{height:38px}
+.nav-logo{display:inline-flex;align-items:center;text-decoration:none;overflow:hidden}
+.nav-logo img{height:140px;width:auto;display:block;margin:-42px 0;transition:height .3s,margin .3s}
+.nav.scrolled .nav-logo img{height:115px;margin:-35px 0}
 .nav-links{display:flex;align-items:center;gap:24px}
 .nav-links a{color:rgba(255,255,255,.75);text-decoration:none;font-size:.78rem;font-weight:600;transition:color .3s}
 .nav-links a:hover{color:var(--yellow)}
@@ -303,8 +303,8 @@ img{max-width:100%;display:block}
 /* ===== FOOTER ===== */
 .footer{background:#0e0e0e;color:rgba(255,255,255,.45);padding:50px 0 20px}
 .footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr;gap:40px;margin-bottom:40px}
-.footer-logo{display:block;margin-bottom:14px}
-.footer-logo img{height:60px;width:auto;display:block}
+.footer-logo{display:block;margin-bottom:14px;overflow:hidden}
+.footer-logo img{height:170px;width:auto;display:block;margin:-50px 0 -45px -20px}
 .footer p{font-size:.84rem;line-height:1.7}
 .footer h4{font-size:.7rem;font-weight:700;color:#fff;text-transform:uppercase;letter-spacing:2px;margin-bottom:14px}
 .footer ul{list-style:none;display:flex;flex-direction:column;gap:8px}
@@ -377,9 +377,9 @@ img{max-width:100%;display:block}
 /* NAV */
 .nav-links{display:none}
 .hamburger{display:block}
-.nav-logo img{height:38px}
-.nav.scrolled .nav-logo img{height:32px}
-.footer-logo img{height:50px}
+.nav-logo img{height:110px;margin:-33px 0}
+.nav.scrolled .nav-logo img{height:90px;margin:-27px 0}
+.footer-logo img{height:140px;margin:-42px 0 -38px -16px}
 
 /* HERO */
 .hero .container{padding:130px 20px 50px;gap:32px;text-align:center}
